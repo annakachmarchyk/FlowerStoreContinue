@@ -13,7 +13,7 @@ public class Order {
     private String delivery;
 
     public void setPaymentStrategy(Payment payment){
-        this.payment = payment.pay(15);
+        this.payment = payment.pay(calculateTotalPrice());
 
     }
 
