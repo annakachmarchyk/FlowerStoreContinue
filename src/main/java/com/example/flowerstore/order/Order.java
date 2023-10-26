@@ -8,9 +8,9 @@ import lombok.Getter;
 import java.util.LinkedList;
 @Getter
 public class Order {
-    LinkedList<Item> items = new LinkedList<>();
-    String payment;
-    String delivery;
+    private LinkedList<Item> items = new LinkedList<>();
+    private String payment;
+    private String delivery;
 
     public void setPaymentStrategy(Payment payment){
         this.payment = payment.pay(15);
