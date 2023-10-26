@@ -24,8 +24,8 @@ public class FlowerController {
 //    @GetMapping("/order")
 public String getOrder() {
         Order a = new Order();
-        a.addItem(new Flower(12, 35, FlowerColor.RED));
-        a.addItem(new Flower(15, 10, FlowerColor.BLUE));
+        a.addItem(new Flower(12, 35, FlowerColor.RED, FlowerType.ROSE));
+        a.addItem(new Flower(15, 10, FlowerColor.BLUE, FlowerType.CHAMOMILE));
         double total = a.calculateTotalPrice();
         a.setDeliveryStrategy(new PostDeliveryStrategy());
         a.setPaymentStrategy(new PayPalPaymentStrategy());
@@ -37,6 +37,7 @@ public String getOrder() {
         res.append("{\n Total price: " + total + "}");
         res.append("\n {Delivery: " + a.getDelivery() + "}");
         res.append(a.getPayment());
+        res.append("\n{Order state: "+ a.processOrder() + "}");
         return res.toString();
     }
 }

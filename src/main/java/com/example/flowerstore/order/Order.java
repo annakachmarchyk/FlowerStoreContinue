@@ -16,6 +16,9 @@ public class Order {
         this.payment = payment.pay(calculateTotalPrice());
 
     }
+    public String processOrder(){
+        return "Order is on the way...";
+    }
 
     public void  setDeliveryStrategy(Delivery delivery){
         this.delivery = delivery.delivery();

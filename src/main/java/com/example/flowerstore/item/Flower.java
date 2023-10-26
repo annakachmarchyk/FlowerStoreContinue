@@ -27,10 +27,12 @@ public class Flower extends Item{
     public Flower() {
     }
 
-    public Flower(int price, int sepalLength, com.example.flowerstore.flowers.FlowerColor flowerColor) {
+    public Flower(int price, int sepalLength, com.example.flowerstore.flowers.FlowerColor flowerColor,
+                  com.example.flowerstore.item.FlowerType flowerType) {
         this.price = price;
         this.sepalLength = sepalLength;
         this.color = flowerColor;
+        this.flowerType = flowerType;
 
     }
 
@@ -40,6 +42,7 @@ public class Flower extends Item{
                 "sepalLength=" + sepalLength +
                 ", color=" + color +
                 ", price=" + price +
+                ", flower=" + flowerType +
                 '}';
     }
 
